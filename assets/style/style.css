@@ -1,0 +1,221 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  width: 100%;
+  height: 100vh;
+  /* background-image: linear-gradient(to bottom,
+                                    #249688 0%,
+                                    #249688  15vh,
+                                    #DADBD4 15vh,
+                                    #DADBD4 100vh); */
+  background: linear-gradient(to bottom,rgb(36,149,136) 130px, rgb(218,218,218) 0%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container{
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+  min-width: 900px;
+  min-height: 500px;
+}
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+}
+#aside{
+  width: 40%;
+  height: 100%;
+  background-color: rgb(235, 235, 235);
+  border-radius: 8px 0 0 0;
+}
+.frame-utente{
+  background-color: rgb(234, 234, 234);
+  height: 70px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px 0 0 0;
+}
+.frame-utente{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.utente{
+  display: flex;
+  align-items: center;
+  border-radius: 5px 0 0 0;
+}
+.utente img{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 0 10px 0 20px;
+  border: solid 0.5px lightgray;
+}
+.utente img:hover{
+  cursor: pointer;
+}
+.frame-icons{
+  width: 100px;
+  display: flex;
+  justify-content: space-between; 
+  color: rgb(180, 180, 180); 
+  font-size: 20px;
+}
+.frame-icons>i{
+  transition: all 0.4s;
+}
+.frame-icons>i:hover{
+  color: rgb(36,149,136);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.frame-icons:last-child{
+  margin-right: 20px;
+}
+.box-notifiche{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 70px;
+  background-color: rgb(142, 218, 252);
+  padding-left: 20px; 
+}
+.box-notifiche h4{
+  margin-left: 10px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.box-notifiche h5{
+  color: rgb(69, 116, 133);
+  margin-left: 10px;
+  text-decoration: underline;
+}
+.cerchio-notifiche{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.cerchio-notifiche{
+  cursor: pointer;
+}
+
+.cerchio-notifiche i{
+  display: flex;
+  font-size: 25px;
+  color: rgb(142, 218, 252);
+  transition: all 0.4s;
+}
+.cerchio-notifiche i:hover{
+  transform: scale(1.09);
+  color: rgb(79, 199, 255);
+  cursor: pointer;
+}
+.frame-search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search{
+  display: flex;
+  align-items: center;
+  padding: 5px 20px 5px 20px;
+  background-color: white;
+  border: solid 1px lightgray;
+  width: 93%;
+  border-radius: 5px;
+  color: lightgray;
+}
+.search input{
+  width: 100%;
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.frame-contatti{
+  height:calc(100% - 200px);
+  width: 96.5%;
+  border-right: solid 1px rgb(210, 210, 210);
+  background-color: rgb(235, 235, 235);
+}
+.lista-contatti{
+  height: 100%;
+  list-style: none;
+  overflow: auto;
+}
+.lista-contatti li{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  height: 79px;
+  border-bottom: solid 1px rgb(210, 210, 210);
+}
+.lista-contatti li:hover{
+  background-color: rgb(226, 226, 226);
+}
+.lista-contatti li img{
+  margin-right: 10px;
+}
+.lista-contatti li img:hover{
+ cursor: pointer;
+}
+
+.contatto img{
+  width: 60px;
+  border-radius: 50%;
+  margin: 0 10px 0 20px;
+}
+#primo-contatto{
+  margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#chat{
+  width: 60%;
+  height: 100%;
+  background-color: yellowgreen;
+  border-radius: 0 5px 0 0;
+}
+.banner{
+  border-radius: 0 5px 0 0;
+  background-color: wheat;
+  height: 70px;
+}
