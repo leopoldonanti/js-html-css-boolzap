@@ -55,8 +55,12 @@ body{
 }
 .frame-utente{
   display: flex;
-  align-content: center;
   justify-content: space-between;
+}
+.utente span{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 .utente{
   display: flex;
@@ -121,7 +125,6 @@ body{
 .cerchio-notifiche{
   cursor: pointer;
 }
-
 .cerchio-notifiche i{
   display: flex;
   font-size: 25px;
@@ -141,6 +144,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: solid 1px rgba(179, 179, 179,0.4);
 }
 .search{
   display: flex;
@@ -178,6 +182,9 @@ body{
   height: 79px;
   border-bottom: solid 1px rgb(210, 210, 210);
 }
+.lista-contatti li h4,.lista-contatti li h5{
+  font-weight: 500;
+}
 .lista-contatti li:hover{
   background-color: rgb(226, 226, 226);
 }
@@ -187,7 +194,6 @@ body{
 .lista-contatti li img:hover{
  cursor: pointer;
 }
-
 .contatto img{
   width: 60px;
   border-radius: 50%;
@@ -196,26 +202,109 @@ body{
 #primo-contatto{
   margin-top: 15px;
 }
+.contatto-text-aside{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.contatto-date-aside{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 30%;
+  padding-right: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
+/* sezione chat dx */
 
 #chat{
   width: 60%;
   height: 100%;
-  background-color: yellowgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 0 5px 0 0;
 }
 .banner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-radius: 0 5px 0 0;
-  background-color: wheat;
+  background-color: rgb(229, 221, 213);
   height: 70px;
+  border-bottom: solid 1px rgba(199, 199, 199, 0.653);
 }
+.banner h4{
+  font-weight: 500;
+}
+.banner img{
+  margin-right: 10px;
+}
+.banner h5{
+  color: gray;
+  font-weight: 500;
+}
+.display-messaggio{
+  height: calc(100% - 140px);
+  background-image: url(../img/mine.jpg);
+  background-size: repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.display-messaggio .row{
+  width: 100%;
+  min-height: 30px ;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 10px;
+}
+.display-messaggio .row .sent, .display-messaggio .row .inbox{
+ background-color: white;
+ border-radius: 20px;
+ max-width:60%;
+ padding: 15px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+/* .display-messaggio .row .inbox{
+  background-color: white;
+  border-radius: 20px;
+  width: 50px;
+  height: 30px; 
+} */
+.banner-messaggio{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  background-color: rgb(229, 221, 213);
+  border-top: solid 1px rgba(189, 188, 188, 0.742);
+}
+.banner-messaggio i{
+  margin-left: 20px;
+  font-size: 20px;
+  transition: all 0.4s;
+  color: rgb(180, 180, 180); 
+}
+.banner-messaggio i:hover{
+  color: rgb(36,149,136);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.banner-messaggio i:last-child{
+  margin-right: 20px;
+}
+.frame-text{
+  width: 80%;
+  padding: 10px 20px 10px 20px;
+  background-color: rgb(255,255,255);
+  border-radius: 8px;
+  margin-left: 20px;
+}
+.frame-text input{
+  outline: none;
+  border: none;
+}
+
+
