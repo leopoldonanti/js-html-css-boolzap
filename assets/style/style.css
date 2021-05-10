@@ -6,11 +6,6 @@
 html{
   width: 100%;
   height: 100vh;
-  /* background-image: linear-gradient(to bottom,
-                                    #249688 0%,
-                                    #249688  15vh,
-                                    #DADBD4 15vh,
-                                    #DADBD4 100vh); */
   background: linear-gradient(to bottom,rgb(36,149,136) 130px, rgb(218,218,218) 0%);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -68,13 +63,12 @@ body{
   border-radius: 5px 0 0 0;
 }
 .utente img{
-  border-radius: 50%;
   height: 50px;
   width: 50px;
   margin: 0 10px 0 20px;
   border: solid 0.5px lightgray;
 }
-.utente img:hover{
+img:hover{
   cursor: pointer;
 }
 .frame-icons{
@@ -183,6 +177,7 @@ body{
   border-bottom: solid 1px rgb(210, 210, 210);
 }
 .lista-contatti li h4,.lista-contatti li h5{
+  margin-bottom: 5px;
   font-weight: 500;
 }
 .lista-contatti li:hover{
@@ -214,6 +209,14 @@ body{
   width: 30%;
   padding-right: 10px;
 }
+.contatto-date-aside h4{
+  font-size: 10px;
+  padding-top: 10px;
+}
+.contatto-date-aside h5{
+  font-size: 10px;
+  padding-top: 5px;
+}
 
 /* sezione chat dx */
 
@@ -225,25 +228,26 @@ body{
   justify-content: space-between;
   border-radius: 0 5px 0 0;
 }
-.banner{
+.banner-chat{
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 0 5px 0 0;
-  background-color: rgb(229, 221, 213);
+  background-color: rgb(231, 229, 228);
   height: 70px;
   border-bottom: solid 1px rgba(199, 199, 199, 0.653);
 }
-.banner h4{
+.banner-chat h4{
   font-weight: 500;
 }
-.banner img{
+.banner-chat img{
   margin-right: 10px;
 }
-.banner h5{
+.banner-chat h5{
   color: gray;
   font-weight: 500;
 }
+/* finestra della conversazione della chat */
 .display-messaggio{
   height: calc(100% - 140px);
   background-image: url(../img/mine.jpg);
@@ -251,41 +255,58 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: scroll;
 }
-.display-messaggio .row{
+/* contenitore che funge da separatore sent/inbox dei messaggi */
+.row{
   width: 100%;
-  min-height: 30px ;
   padding: 10px 20px 10px 20px;
-  margin-bottom: 10px;
 }
-.display-messaggio .row .sent, .display-messaggio .row .inbox{
- background-color: white;
- border-radius: 20px;
- max-width:60%;
- padding: 15px;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-/* .display-messaggio .row .inbox{
-  background-color: white;
+/* baloon messaggio  */
+.baloon{
   border-radius: 20px;
-  width: 50px;
-  height: 30px; 
-} */
+  max-width:60%;
+  min-width: 30%;
+  padding:  15px 20px 10px 20px; 
+  font-size: 14px;
+}
+#sent, #inbox{
+  display: flex;
+  flex-direction: column; 
+}
+#sent{
+  background-color: rgb(213, 249,185);
+  align-items: flex-end;
+  text-align: left;
+}
+#inbox{
+  background-color: white;
+  align-items: flex-start;
+  text-align: left;
+}
+#inbox h3, #sent h3{
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+#inbox h5, #sent h5{
+  color: rgba(104, 102, 102, 0.911);
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
 .banner-messaggio{
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 70px;
-  background-color: rgb(229, 221, 213);
+  background-color: rgb(231, 229, 228);
   border-top: solid 1px rgba(189, 188, 188, 0.742);
 }
 .banner-messaggio i{
   margin-left: 20px;
   font-size: 20px;
   transition: all 0.4s;
-  color: rgb(180, 180, 180); 
+  color: rgb(157, 157, 157); 
 }
 .banner-messaggio i:hover{
   color: rgb(36,149,136);
@@ -295,9 +316,11 @@ body{
 .banner-messaggio i:last-child{
   margin-right: 20px;
 }
+
+/* sezione input invio messaggi  */
 .frame-text{
   width: 80%;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 15px 10px 15px;
   background-color: rgb(255,255,255);
   border-radius: 8px;
   margin-left: 20px;
@@ -305,6 +328,8 @@ body{
 .frame-text input{
   outline: none;
   border: none;
+  font-size: 14px;
+  width: 90%
 }
 
 

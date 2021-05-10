@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="assets/style/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="assets/style/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 </head>
@@ -15,25 +15,23 @@
   <div id="app" class="container">
 
     <div id="aside" class="float-left">
-    <div class="frame-utente">
+      
+      <div class="frame-utente"
+           >
 
-      <div class="utente">
+        <div class="utente">
+          <img src="assets/img/avatar_io.jpg" alt="">
+          <span>{{user.name}}</span>
+        </div>
 
-        <img src="assets/img/avatar_io.jpg" alt="">
-        <span>Nome Utente</span>
+        <div class="frame-icons float-right">
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
 
       </div>
-
-      <div class="frame-icons float-right">
-
-        <i class="fas fa-circle-notch"></i>
-        <i class="fas fa-comment-alt"></i>
-        <i class="fas fa-ellipsis-v"></i>
-
-      </div>
-
-    </div>
-
+      <!-- ASIDE NOTIFICHE -->
     <div class="box-notifiche">
       <div class="cerchio-notifiche">
         <i class="fas fa-bell-slash"></i>
@@ -43,7 +41,7 @@
         <h5>Attiva le notifiche desktop</h5>
       </div>
     </div>
-
+      <!-- ASIDE SEARCH BAR -->
    <div class="frame-search">
     <div class="search">
       <i class="fas fa-search"></i>
@@ -51,34 +49,26 @@
     </div>
    </div>
 
-    <!-- <div id="primo-contatto" class="contatto float-left">
-      <img src="assets/img/avatar_1.jpg" alt="">
-      <span>Michele</span>
-
-    </div>
-    <div class="contatto float-left">
-      <img src="assets/img/avatar_dev.jpg" alt="">
-      <span>Fabio per i fans Deviato</span>
-
-    </div> -->
+      <!-- ASIDE SEZIONE CONTATTI -->
     <div class="frame-contatti">
 
       <ul class="lista-contatti">
 
-        <li>
-          <img src="assets/img/avatar_1.jpg" alt="">
+        <li v-for="(contact, index) in contacts">
+          <!-- <img :src="getSrc(index)" alt="Avatar"> -->
           
-            
+          <img :src="'assets/img/avatar'+contact.avatar+'.jpg'" alt="">
+
           <div class="contatto-text-aside">
-            <h4>Michele</h4>
-            <h5>ok tutto bene</h5>
+            <h4>{{contact.name}}</h4>
+            <h5>{{contact.messages[0].text}}</h5>
           </div>
-          <div class="contatto-date-aside">
-            <h4>08:31 </h4>
-            <h5>02/01/2021</h5>
+          
+          <div  class="contatto-date-aside">
+            <h4>{{contact.messages[0].hour}}</h4>
+            <h5>{{contact.messages[0].date}}</h5>
           </div>
             
-          
         </li>
         
       </ul>
@@ -89,25 +79,16 @@
 
     <div id="chat" class="float-right">
       
-      <div class="banner">
-
-        <!-- <img src="assets/img/avatar_1.jpg" alt="">
-        <h4>Michele</h4>
-        <div class="frame-icons float-right">
-
-          <i class="fas fa-circle-notch"></i>
-          <i class="fas fa-comment-alt"></i>
-          <i class="fas fa-ellipsis-v"></i>
-  
-        </div> -->
+      <div class="banner-chat">
         
         <div class="utente">
 
           <img src="assets/img/avatar_1.jpg" alt="">
 
           <div>
-            <h4>Michele</h4>
-            <h5>Ultimo accesso oggi alle</h5>
+
+            <h4>{{contacts[elenco_index].name}}</h4>
+            <h5></h5>
           </div>
           
         </div>
@@ -125,14 +106,22 @@
       <div class="display-messaggio">
 
         <div class="row">
-          <div class="sent float-right">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quisquam enim nulla perspiciatis labore molestiae rerum voluptatum, tempora molestias incidunt voluptates voluptatibus ratione temporibus reiciendis laudantium sapiente, repellat minus sint?
+          <div id="sent" class="baloon float-right">
+            
+              <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi pariatur veniam quo sint temporibus ut nemo, iste deserunt, eaque beatae mollitia! Perferendis unde nostrum tenetur maxime ducimus quaerat assumenda dicta?</h3>
+
+              <h5>20:30:11 <span>XXXXXX</span></h5>
+            
           </div>
         </div>
 
         <div class="row">
-          <div class="inbox float-left">
-            djiji
+          <div id="inbox" class="baloon float-left">
+            
+              <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet quasi quas saepe itaque molestiae alias in consequatur rem ducimus cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi pariatur veniam quo sint temporibus ut nemo, iste deserunt, eaque beatae mollitia! Perferendis unde nostrum tenetur maxime ducimus quaerat assumenda dicta?</h3>
+
+              <h5>20:30:11 <span>XXXXXX</span></h5>
+            
           </div>
         </div>
 
