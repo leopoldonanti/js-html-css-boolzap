@@ -287,6 +287,7 @@ img:hover{
 #inbox h3, #sent h3{
   margin-bottom: 8px;
   font-weight: 500;
+  text-align: justify;
 }
 #inbox h5, #sent h5{
   color: rgba(104, 102, 102, 0.911);

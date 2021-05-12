@@ -4,8 +4,6 @@ var app = new Vue({
 
   data: {
 
-    elenco_index:0,
-
     user: {
       name: 'Nome Utente',
       avatar: '_io'
@@ -108,7 +106,13 @@ var app = new Vue({
           }
         ],
       }
-    ] //CLOSE ARRAY DI OGGETTI
+    ],//CLOSE ARRAY DI OGGETTI
+
+  contactActive:0,  
+
+  elenco_index:0,
+
+    
   }, //CLOSE DATA
   
   methods:{
