@@ -18,7 +18,8 @@
       
       <div class="frame-utente">
         <div class="utente">
-          <img src="assets/img/avatar_io.jpg" alt="">
+          <!-- <img src="assets/img/avatar_io.jpg" alt=""> -->
+          <img :src="'assets/img/avatar'+ user.avatar +'.jpg'" alt="avatar">
           <span>{{user.name}}</span>
         </div>
 
@@ -44,7 +45,7 @@
     <div class="search">
       <i class="fas fa-search"></i>
       <input type="search" 
-             placeholder="Cerca o inizia una nuova chaht"
+             placeholder="Cerca o inizia una nuova chat"
             >
     </div>
    </div>
@@ -65,8 +66,8 @@
           </div>
           
           <div  class="contatto-date-aside">
-            <h4>{{contact.messages[0].hour}}</h4>
-            <h5>{{contact.messages[0].date}}</h5>
+            <h4>{{contact.messages[contact.messages.length-1].hour}}</h4>
+            <h5>{{contact.messages[contact.messages.length-1].date}}</h5>
           </div>
             
         </li>
@@ -74,21 +75,22 @@
       </ul>
 
     </div>
-
+ 
     </div>
 
     <div id="chat" class="float-right">
       
-      <div class="banner-chat">
+      <div 
+           
+           class="banner-chat">
         
         <div class="utente">
 
           <img src="assets/img/avatar_1.jpg" alt="">
 
           <div>
-
-            <h4>{{contacts[elenco_index].name}}</h4>
-            <h5>Ultimo accesso oggi alle {{contacts[elenco_index].messages[contactActive].hour}}</h5>
+            <h4>{{contacts[contactActive].name}}</h4>
+            <h5>Ultimo accesso oggi alle {{contacts[contactActive].messages[0].hour}}</h5>
           </div>
           
         </div>
@@ -103,28 +105,25 @@
 
       </div>
 
-      <div class="display-messaggio">
+      <div  v-if="awesome"
+            class="display-messaggio">
 
-        <div class="row">
-          <div id="sent" class="baloon float-right">
+        <div  v-for="(message, index) in contacts[contactActive].messages"
+              class="row">
 
-              <h3>{{contacts[elenco_index].messages[contactActive].text}}</h3>
+          <div :class="message.status === 'sent' ? 'sent' : 'inbox'" 
+               class="baloon">
 
-              <h5><span><i class="fas fa-chevron-down"></i></span> {{contacts[elenco_index].messages[contactActive].hour}}<span> - {{contacts[elenco_index].messages[contactActive].date}}</span></h5>
-            
+              <h3>{{message.text}}</h3>
+
+              <h5><span><i class="fas fa-chevron-down"></i></span> 
+              <span> 
+                
+              </span>
+            </h5>
+  
           </div>
         </div>
-
-        <div class="row">
-          <div id="inbox" class="baloon float-left">
-            
-              <h3></h3>
-
-              <h5><span><i class="fas fa-chevron-down"></i></span> 20:30:11 <span>XXXXXX</span></h5>
-            
-          </div>
-        </div>
-
       </div>
 
       <div class="banner-messaggio">

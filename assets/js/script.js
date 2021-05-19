@@ -4,6 +4,8 @@ var app = new Vue({
 
   data: {
 
+    awesome: false,
+
     user: {
       name: 'Nome Utente',
       avatar: '_io'
@@ -33,7 +35,6 @@ var app = new Vue({
             hour: '16:15:22',
             text: 'Tutto fatto!',
             status: 'received',
-            
           }
         ] 
       },
